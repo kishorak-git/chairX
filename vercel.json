@@ -1,0 +1,37 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
+```
+
+Click **Commit changes**.
+
+---
+
+## Then in Vercel
+
+1. Go to your Vercel project dashboard
+2. Click **Settings** → **General**
+3. Scroll to **Framework Preset** → make sure it says **Other** (not Next.js or anything else)
+4. Go back to **Deployments** → click **Redeploy**
+
+---
+
+## Your GitHub repo should now look like this
+```
+chairiq/
+├── index.html
+├── vercel.json      ← new file you just added
+├── README.md
+└── ChairIQ_Project_Report.pdf
