@@ -1,18 +1,1 @@
-{
-  "version": 2
-}
-```
 
-6. Click **Commit changes**
-
----
-
-That's it. Just those 3 lines. Vercel will automatically detect `index.html` and serve it as a static site without needing any extra config.
-
----
-
-## Also make sure your repo looks exactly like this:
-```
-chairX/
-├── index.html       ← must be named exactly this
-└── vercel.json      ← just the 3 lines above
