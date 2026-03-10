@@ -1,37 +1,18 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "index.html",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ]
+  "version": 2
 }
 ```
 
-Click **Commit changes**.
+6. Click **Commit changes**
 
 ---
 
-## Then in Vercel
-
-1. Go to your Vercel project dashboard
-2. Click **Settings** → **General**
-3. Scroll to **Framework Preset** → make sure it says **Other** (not Next.js or anything else)
-4. Go back to **Deployments** → click **Redeploy**
+That's it. Just those 3 lines. Vercel will automatically detect `index.html` and serve it as a static site without needing any extra config.
 
 ---
 
-## Your GitHub repo should now look like this
+## Also make sure your repo looks exactly like this:
 ```
-chairiq/
-├── index.html
-├── vercel.json      ← new file you just added
-├── README.md
-└── ChairIQ_Project_Report.pdf
+chairX/
+├── index.html       ← must be named exactly this
+└── vercel.json      ← just the 3 lines above
