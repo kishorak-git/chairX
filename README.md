@@ -1,27 +1,42 @@
-# ChairX
+# ChairIQ
 
-A smart posture detection system built with ESP32 and sensors.
+Seat-pressure posture monitoring: dashboard simulation (sensor hardware not yet built)
 
-Detects sitting posture in real time and alerts the user 
-when posture correction is needed — designed for long study 
-and work sessions.
+ChairIQ is an HTML/CSS/JavaScript dashboard that demonstrates seat-pressure and posture monitoring with simulated input.
 
-## The Problem
-Bad posture during long hours causes chronic back and neck 
-pain. Most people only notice it after damage is done.
+## Live demo
 
-## What ChairX Does
-- Monitors sitting posture continuously via sensors
-- Detects deviation from correct posture angle
-- Triggers real-time alerts to correct position
-- Runs entirely on embedded hardware — no phone needed
+https://chairx-mu.vercel.app/
 
-## Stack
-ESP32 · Pressure/Tilt Sensors · Embedded C · Hardware
+## Screenshot
 
-## Status
-Prototype built. Active development under EmbedronIX.
+> Screenshot placeholder: add a real ChairIQ dashboard screenshot here.
 
-## Part of
-**EmbedronIX** — Student IoT innovation team  
-Stella Mary's College of Engineering, Tamil Nadu
+## What the simulation does
+
+- Displays four simulated seat-pressure zones: front, back, left, and right.
+- Calculates a posture score from the four zone values.
+- Tracks simulated sitting time.
+- Shows alerts for poor posture and extended sitting time.
+- Supports simulated postures including good posture, hunch, lean left, lean right, slouch, and stand up.
+- Displays the current posture, score history, sitting statistics, and a simulation log.
+
+## Planned
+
+- ESP32-based hardware input
+- Physical pressure sensors
+- WebSocket data transfer
+
+The planned hardware and WebSocket integration are not implemented in this repository.
+
+## How to run locally
+
+This project is a static HTML application.
+
+```powershell
+git clone https://github.com/kishorak-git/chairX.git
+cd chairX
+python -m http.server 8000
+```
+
+Open `http://localhost:8000/intex.html` in a browser.
