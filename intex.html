@@ -266,7 +266,7 @@
     color: var(--muted);
   }
 
-  /* ── SENSOR READOUTS ── */
+  /* ── SIMULATED PRESSURE READOUTS ── */
   .sensor-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -539,7 +539,7 @@
     <div class="logo-text">Chair<span>IQ</span></div>
   </div>
   <div class="header-right">
-    <div class="live-badge"><div class="live-dot"></div> Live Monitor</div>
+    <div class="live-badge"><div class="live-dot"></div> Dashboard Simulation</div>
     <div class="hdr-time" id="hdr-time">00:00:00</div>
   </div>
 </header>
@@ -549,9 +549,9 @@
   <!-- LEFT PANEL -->
   <div class="panel">
 
-    <!-- Pressure sliders -->
+    <!-- Simulated pressure sliders -->
     <div>
-      <div class="section-title">Pressure Sensors</div>
+      <div class="section-title">Simulated Pressure Zones</div>
       <div class="slider-group">
         <div class="slider-item">
           <div class="slider-header">
@@ -698,7 +698,7 @@
           <path d="M 160 180 L 160 210" stroke="#ef4444" stroke-width="3" stroke-linecap="round"/>
           <path d="M 152 202 L 160 210 L 168 202" stroke="#ef4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
         </g>
-        <!-- Sensor dots on chair -->
+        <!-- Simulated pressure markers on chair -->
         <circle id="dot-front" cx="160" cy="240" r="5" fill="#c97d2e" opacity="0.4"/>
         <circle id="dot-back"  cx="160" cy="210" r="5" fill="#c97d2e" opacity="0.4"/>
         <circle id="dot-left"  cx="85"  cy="225" r="5" fill="#c97d2e" opacity="0.4"/>
@@ -734,9 +734,9 @@
 
     <div class="divider"></div>
 
-    <!-- Sensor readouts -->
+    <!-- Simulated pressure readouts -->
     <div>
-      <div class="section-title">Sensor Readings</div>
+      <div class="section-title">Simulated Zone Readings</div>
       <div class="sensor-grid">
         <div class="sensor-box" id="sb-front">
           <div class="sensor-name">Front</div>
@@ -763,9 +763,9 @@
 
     <div class="divider"></div>
 
-    <!-- Hardware indicators -->
+    <!-- Dashboard alert indicators -->
     <div>
-      <div class="section-title">Hardware Status</div>
+      <div class="section-title">Alert Indicators</div>
       <div class="led-row" style="margin-bottom:12px">
         <div class="led-item">
           <div class="led" id="led-red"></div>
@@ -785,8 +785,8 @@
         </div>
       </div>
 
-      <!-- LCD -->
-      <div class="section-title" style="margin-top:4px">LCD Display</div>
+      <!-- LCD-style display -->
+      <div class="section-title" style="margin-top:4px">LCD-Style Display</div>
       <div class="lcd">
         <span class="lcd-row" id="lcd1">  ChairIQ v1.0  </span>
         <span class="lcd-row" id="lcd2">   Waiting...   </span>
@@ -826,12 +826,12 @@
       </div>
     </div>
 
-    <!-- Serial -->
+    <!-- Simulation log -->
     <div>
-      <div class="section-title">Serial Monitor</div>
+      <div class="section-title">Simulation Log</div>
       <div class="serial-log" id="serial-log">
-        <div class="s-ok">ChairIQ v1.0 — System Ready</div>
-        <div>Waiting for sensor input...</div>
+        <div class="s-ok">ChairIQ dashboard — Ready</div>
+        <div>Waiting for simulated input...</div>
       </div>
     </div>
 
@@ -961,7 +961,7 @@ function update() {
   $('zone-left').style.opacity  = (v.left/100  * 0.7).toString();
   $('zone-right').style.opacity = (v.right/100 * 0.7).toString();
 
-  // Sensor dots pulse
+  // Simulated pressure markers
   ['front','back','left','right'].forEach(k => {
     $('dot-'+k).style.opacity = (0.3 + v[k]/100 * 0.7).toString();
     $('dot-'+k).setAttribute('r', (4 + v[k]/100 * 4).toString());
